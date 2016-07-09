@@ -4,10 +4,17 @@
 TestApp::TestApp(sf::ContextSettings* context_proto,std::string filename)
 	: GameApp(context_proto)
 {
+	mesh = 0;
 	fail = lib3ds_file_open(filename.c_str());
 	if(!fail) std::cout << "Failed to load " << filename << "." << std::endl;
 	std::cout << "Constructed.\n";
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
+}
+
+TestApp::~TestApp()
+{
+	if(mesh) delete mesh;
+	if(fail) delete fail;
 }
 
 float vertexPositions[] = {
@@ -75,7 +82,15 @@ void TestApp::Render()
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
 	if(fail)
 	{
-		;//Under construction
+		for(int i = 0;i < fail->nmeshes;++i)
+		{
+			glBindBuffer(GL_ARRAY_BUFFER, mesh[i]);
+			glEnableVertexAttribArray(0);
+			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+			glDrawArrays(GL_TRIANGLES, 0, fail->meshes[i]->nvertices);
+			glDisableVertexAttribArray(0);
+			// UNDER CONSTRUCTION
+		}
 	}
 	else
 	{

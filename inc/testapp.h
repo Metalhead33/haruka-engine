@@ -10,6 +10,7 @@ class TestApp : public GameApp
 {
 public:
 	TestApp(sf::ContextSettings* context_proto,std::string filename);
+	~TestApp();
 	bool Startup();
 	bool Cleanup();
 	void Render();
