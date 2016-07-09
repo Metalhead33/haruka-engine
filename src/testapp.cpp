@@ -7,6 +7,7 @@ TestApp::TestApp(sf::ContextSettings* context_proto,std::string filename)
 	mesh = 0;
 	fail = lib3ds_file_open(filename.c_str());
 	if(!fail) std::cout << "Failed to load " << filename << "." << std::endl;
+	else std::cout << "Succesfully loaded model: " << filename << "." << std::endl;
 	std::cout << "Constructed.\n";
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
 }
@@ -34,13 +35,15 @@ bool TestApp::Startup()
 		return false;
 	}
 	// theProgram = InitializeProgram("/home/metalhead33/Ways of Darkness Project/build-WoD-Desktop-Debug/strVertexShader.shdr","/home/metalhead33/Ways of Darkness Project/build-WoD-Desktop-Debug/strFragmentShader.shdr");
-	theProgram = InitializeProgram(ReadFromFile("/home/metalhead33/Ways of Darkness Project/build-WoD-Desktop-Debug/strVertexShader.shdr"),ReadFromFile("/home/metalhead33/Ways of Darkness Project/build-WoD-Desktop-Debug/strFragmentShader.shdr"));
+	theProgram = InitializeProgram(ReadFromFile("strVertexShader.shdr"),ReadFromFile("strFragmentShader.shdr"));
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
 	if(fail)
 	{
+		std::cout << "Allocating space for " << fail->nmeshes << " meshes.\n" ;
 		mesh = new GLuint[fail->nmeshes];
 		for(i = 0;i < fail->nmeshes;++i)
 		{
+		std::cout << "Handling the " << i+1 << "th mesh.\n";
 		temp_mesh = fail->meshes[i];
 		glGenBuffers(1, &mesh[i]);
 		glBindBuffer(GL_ARRAY_BUFFER, mesh[i]);
