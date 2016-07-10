@@ -2,9 +2,9 @@
 #define TESTAPP_H
 #include "baseapp.h"
 #include "static.h"
-extern "C" {
+/*extern "C" {
 #include <lib3ds.h>
-}
+}*/
 
 class TestApp : public GameApp
 {
@@ -18,8 +18,8 @@ public:
 private:
 	sf::Event event;
 	GLuint uiVAOid, uiVBOid, theProgram;
-	GLuint* mesh;
-	Lib3dsFile* fail;
+	/*GLuint* mesh;
+	Lib3dsFile* fail;*/
 };
 
 #endif // TESTAPP_H
