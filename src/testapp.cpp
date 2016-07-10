@@ -14,8 +14,9 @@ TestApp::TestApp(sf::ContextSettings* context_proto,std::string filename)
 
 TestApp::~TestApp()
 {
-	if(mesh) delete mesh;
-	if(fail) delete fail;
+	//if(mesh) delete mesh;
+	//if(fail) delete fail;
+	std::cout << "Destroyed.\n";
 }
 
 float vertexPositions[] = {
@@ -27,7 +28,7 @@ float vertexPositions[] = {
 bool TestApp::Startup()
 {
 	std::cout << "Starting.\n";int i;
-	Lib3dsMesh* temp_mesh;
+	//Lib3dsMesh* temp_mesh;
 	glewExperimental = GL_TRUE;
 	if (glewInit() != GLEW_OK)
 	 {
