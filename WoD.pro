@@ -9,7 +9,7 @@ include(qmake_modules/findLuaJIT.pro)
 include(qmake_modules/findBullet.pro)
 include(qmake_modules/findSFML.pro)
 include(qmake_modules/findGLEW.pro)
-include(qmake_modules/find3DS.pro)
+include(qmake_modules/findAssimp.pro)
 INCLUDEPATH += inc
 SOURCES += "src/main.cpp" \
     src/baseapp.cpp \

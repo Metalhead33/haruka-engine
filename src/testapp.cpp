@@ -4,10 +4,10 @@
 TestApp::TestApp(sf::ContextSettings* context_proto,std::string filename)
 	: GameApp(context_proto)
 {
-	mesh = 0;
+	/*mesh = 0;
 	fail = lib3ds_file_open(filename.c_str());
 	if(!fail) std::cout << "Failed to load " << filename << "." << std::endl;
-	else std::cout << "Succesfully loaded model: " << filename << "." << std::endl;
+	else std::cout << "Succesfully loaded model: " << filename << "." << std::endl;*/
 	std::cout << "Constructed.\n";
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
 }
@@ -37,7 +37,7 @@ bool TestApp::Startup()
 	// theProgram = InitializeProgram("/home/metalhead33/Ways of Darkness Project/build-WoD-Desktop-Debug/strVertexShader.shdr","/home/metalhead33/Ways of Darkness Project/build-WoD-Desktop-Debug/strFragmentShader.shdr");
 	theProgram = InitializeProgram(ReadFromFile("strVertexShader.shdr"),ReadFromFile("strFragmentShader.shdr"));
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
-	if(fail)
+	/*if(fail)
 	{
 		std::cout << "Allocating space for " << fail->nmeshes << " meshes.\n" ;
 		mesh = new GLuint[fail->nmeshes];
@@ -52,12 +52,12 @@ bool TestApp::Startup()
 		}
 	}
 	else
-	{
+	{*/
 	glGenBuffers(1, &uiVBOid);
 	glBindBuffer(GL_ARRAY_BUFFER, uiVBOid);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexPositions), vertexPositions, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	}
+	//}
 	glGenVertexArrays(1, &uiVAOid);
 	glBindVertexArray(uiVAOid);
 	return true;
@@ -83,7 +83,7 @@ void TestApp::Render()
 	// draw...
 	glUseProgram(theProgram);
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
-	if(fail)
+	/*if(fail)
 	{
 		for(int i = 0;i < fail->nmeshes;++i)
 		{
@@ -96,14 +96,14 @@ void TestApp::Render()
 		}
 	}
 	else
-	{
+	{*/
 	glBindBuffer(GL_ARRAY_BUFFER, uiVBOid);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
 
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 	glDisableVertexAttribArray(0);
-	}
+	//}
 	glUseProgram(0);
 
 	// end the current frame (internally swaps the front and back buffers)
