@@ -1,7 +1,6 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 #include "static.h"
-#include <vector>
 
 const std::string ReadFromFile(std::string filename);
 GLuint InitializeProgram(std::string strVertexShader,std::string strFragmentShader);

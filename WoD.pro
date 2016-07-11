@@ -15,9 +15,13 @@ SOURCES += "src/main.cpp" \
     src/baseapp.cpp \
     src/testapp.cpp \
     src/vector.cpp \
-    src/fileio.c
+    src/fileio.c \
+    src/model.cpp \
+    src/bufferObject.cpp
 HEADERS += "inc/baseapp.h" \
     inc/testapp.h \
     inc/vector.h \
     inc/static.h \
-    inc/fileio.h
+    inc/fileio.h \
+    inc/model.h \
+    inc/bufferObject.h
