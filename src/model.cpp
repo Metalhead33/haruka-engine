@@ -1,14 +1,13 @@
-#include "model.h"
+#include "Model.hpp"
 
 
 void Model::PrepareScene()
 {
 	if(scene)
 	{
-		meshes.n_pointers = scene->mNumMeshes;
-		for(int i = 0;i < meshes.n_pointers;++i)
+		buf = new BufferObject[scene->mNumMeshes];
+		for(int i = 0;i < scene->mNumMeshes;++i)
 		{
-			;
 		}
 	}
 }
@@ -17,12 +16,14 @@ Model::Model()
 {
 	scene = 0;
 	texture = 0;
+	buf = 0;
 }
 
 Model::~Model()
 {
 	if(scene) delete scene;
 	if(texture) delete texture;
+	if(buf) delete buf;
 }
 
 Model::Model(aiScene* SetScene,sf::Texture* SetTexture)

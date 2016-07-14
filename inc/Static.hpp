@@ -15,8 +15,13 @@
 #include <glm/vec4.hpp> // glm::vec4
 #include <glm/mat4x4.hpp> // glm::mat4
 #include <glm/gtc/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale, glm::perspective
+typedef struct m_Vertex {
+	glm::vec3 Position;
+	glm::vec3 Normal;
+	glm::vec3 TexCoords;
+} Vertex;
 
-#include "fileio.h"
+#include "FileIO.h"
 
 #include <assimp/Importer.hpp>      // C++ importer interface
 #include <assimp/scene.h>           // Output data structure

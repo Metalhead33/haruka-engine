@@ -1,10 +1,13 @@
 #ifndef TESTAPP_H
 #define TESTAPP_H
-#include "baseapp.h"
-#include "static.h"
+#include "BaseAapp.hpp"
+#include "Static.hpp"
 /*extern "C" {
 #include <lib3ds.h>
 }*/
+
+namespace Engine
+{
 
 class TestApp : public GameApp
 {
@@ -21,5 +24,7 @@ private:
 	/*GLuint* mesh;
 	Lib3dsFile* fail;*/
 };
+
+}
 
 #endif // TESTAPP_H

@@ -12,16 +12,19 @@ include(qmake_modules/findGLEW.pro)
 include(qmake_modules/findAssimp.pro)
 INCLUDEPATH += inc
 SOURCES += "src/main.cpp" \
-    src/baseapp.cpp \
-    src/testapp.cpp \
-    src/vector.cpp \
-    src/fileio.c \
     src/model.cpp \
-    src/bufferObject.cpp
-HEADERS += "inc/baseapp.h" \
-    inc/testapp.h \
-    inc/vector.h \
-    inc/static.h \
-    inc/fileio.h \
-    inc/model.h \
-    inc/bufferObject.h
+    src/bufferObject.cpp \
+    src/Mesh.cpp \
+    src/BaseAapp.cpp \
+    src/FileIO.c \
+    src/TestApp.cpp \
+    src/Shader.cpp
+HEADERS += \
+    inc/bufferObject.hpp \
+    inc/Mesh.hpp \
+    inc/Model.hpp \
+    inc/BaseAapp.hpp \
+    inc/FileIO.h \
+    inc/Static.hpp \
+    inc/TestApp.hpp \
+    inc/Shader.hpp

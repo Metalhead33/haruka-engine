@@ -1,13 +1,7 @@
 #ifndef MODEL_H
 #define MODEL_H
-#include "static.h"
-#include "bufferObject.h"
-
-typedef struct Meshes
-{
-	GLuint* pointers;
-	size_t n_pointers;
-} MMeshes;
+#include "Static.hpp"
+#include "bufferObject.hpp"
 
 class Model
 {
@@ -25,7 +19,7 @@ private:
 	aiScene* scene;
 	sf::Texture* texture;
 	Assimp::Importer importer;
-	MMeshes meshes;
+	BufferObject* buf;
 };
 
 #endif // MODEL_H

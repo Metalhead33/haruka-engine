@@ -1,7 +1,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include "fileio.h"
+#include "FileIO.h"
 #include <stdio.h>
 char* ReadBin(char* filename)
 {

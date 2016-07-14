@@ -1,5 +1,8 @@
-#include "testapp.h"
-#include "vector.h"
+#include "TestApp.hpp"
+#include "Shader.hpp"
+
+namespace Engine
+{
 
 TestApp::TestApp(sf::ContextSettings* context_proto,std::string filename)
 	: GameApp(context_proto)
@@ -126,4 +129,6 @@ bool TestApp::Update(sf::Time deltaTime)
 	}
 	//ANYTHING AFTER THIS IS EXTRA ADDITIVE
 	return true;
+}
+
 }

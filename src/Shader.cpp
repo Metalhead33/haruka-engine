@@ -1,5 +1,8 @@
-#include "vector.h"
+#include "Shader.hpp"
 #include <sstream>
+
+namespace Engine
+{
 
 const std::string ReadFromFile(std::string filename)
 {
@@ -93,4 +96,6 @@ GLuint CreateProgram(const std::vector<GLuint> &shaderList)
 		glDetachShader(program, shaderList[iLoop]);
 
 	return program;
+}
+
 }

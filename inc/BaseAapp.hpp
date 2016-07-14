@@ -1,6 +1,9 @@
 #ifndef BASEAPP_H
 #define BASEAPP_H
-#include "static.h"
+#include "Static.hpp"
+
+namespace Engine
+{
 
 class GameApp
 {
@@ -20,5 +23,7 @@ private:
 	sf::Clock *clock;
 	sf::Window window;
 };
+
+}
 
 #endif // BASEAPP_H

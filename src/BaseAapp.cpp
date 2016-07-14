@@ -1,4 +1,7 @@
-#include "baseapp.h"
+#include "BaseAapp.hpp"
+
+namespace Engine
+{
 
 GameApp::GameApp(unsigned int x, unsigned int y,const std::string title, sf::Uint32 style, sf::ContextSettings* context_proto)
 	: window(sf::VideoMode(x,y),title,style,*(context = context_proto))
@@ -43,4 +46,6 @@ sf::Window* GameApp::GetWindow()
 sf::ContextSettings* GameApp::GetContext()
 {
 	return context;
+}
+
 }

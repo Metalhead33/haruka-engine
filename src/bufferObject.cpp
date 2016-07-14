@@ -1,4 +1,4 @@
-#include "bufferObject.h"
+#include "bufferObject.hpp"
 
 BufferObject::BufferObject(GLfloat* m_Vertices, size_t m_numVertices, GLuint* m_Indices, size_t m_numIndicces, bool m_Initialize)
 {
@@ -21,6 +21,11 @@ bool BufferObject::SetStats(GLfloat* m_Vertices,size_t m_numVertices,GLuint* m_I
 	Indices = m_Indices;
 	numIndicces = m_numIndicces;
 	return true;
+}
+
+BufferObject::~BufferObject()
+{
+	this->Destroy();
 }
 
 bool BufferObject::Initialize(bool CleanOrigins)
